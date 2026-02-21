@@ -8,11 +8,15 @@ import { GoogleGenAI } from '@google/genai';
 import ReactMarkdown from 'react-markdown';
 import Welcome from '@/components/Welcome';
 
+<<<<<<< HEAD
 function getAI() {
   return new GoogleGenAI({
     apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY,
   });
 }
+=======
+const ai = new GoogleGenAI({ apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY! });
+>>>>>>> fe491e44639188f074fba6477f2f8cebb5a8a72d
 
 interface StudyData {
   day: number;

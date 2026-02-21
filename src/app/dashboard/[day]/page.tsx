@@ -8,12 +8,17 @@ import { GoogleGenAI } from '@google/genai';
 import ReactMarkdown from 'react-markdown';
 
 // IMPORTANT: Add your Gemini API key to .env.local
+<<<<<<< HEAD
 /* ✅ Safe Gemini initializer */
 function getAI() {
   return new GoogleGenAI({
     apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY,
   });
 }
+=======
+const ai = new GoogleGenAI({ apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY! });
+
+>>>>>>> fe491e44639188f074fba6477f2f8cebb5a8a72d
 interface DailyData {
   topic: string;
   learning: string;
@@ -75,7 +80,11 @@ export default function DailyEntryPage() {
     setIsLoadingAnalysis(true);
     setLearningAnalysis('');
     try {
+<<<<<<< HEAD
       const response = await getAI().models.generateContent({
+=======
+      const response = await ai.models.generateContent({
+>>>>>>> fe491e44639188f074fba6477f2f8cebb5a8a72d
         model: 'gemini-flash-latest',
         contents: `Based on the following CCNA study notes, generate a few key takeaways and suggest one related topic to study next. Format the output as markdown:\n\n${data.learning}`,
       });
@@ -92,7 +101,11 @@ export default function DailyEntryPage() {
     setIsLoadingCommands(true);
     setCommandsExplanation('');
     try {
+<<<<<<< HEAD
       const response = await getAI().models.generateContent({
+=======
+      const response = await ai.models.generateContent({
+>>>>>>> fe491e44639188f074fba6477f2f8cebb5a8a72d
         model: 'gemini-flash-latest',
         contents: `Explain the following Cisco IOS commands, assuming a CCNA-level context. Provide a brief explanation for each command. Format the output as a markdown list:\n\n${data.commands}`,
       });

@@ -6,11 +6,15 @@ import { Plus, Trash2, Sparkles } from 'lucide-react';
 import { GoogleGenAI } from '@google/genai';
 import ReactMarkdown from 'react-markdown';
 
+<<<<<<< HEAD
 function getAI() {
   return new GoogleGenAI({
     apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY,
   });
 }
+=======
+const ai = new GoogleGenAI({ apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY! });
+>>>>>>> fe491e44639188f074fba6477f2f8cebb5a8a72d
 
 export default function LabsPage() {
   const [labs, setLabs] = useState<string[]>([]);
@@ -49,7 +53,11 @@ export default function LabsPage() {
     const completedLabs = labs.join(', ');
     try {
       const prompt = `Based on the following list of completed CCNA labs, suggest a logical next lab to practice. Provide a brief reason for the suggestion. The completed labs are: ${completedLabs}. If the list is empty, suggest a good starting lab.`;
+<<<<<<< HEAD
       const response = await getAI().models.generateContent({ model: 'gemini-3.1-pro-preview', contents: prompt });
+=======
+      const response = await ai.models.generateContent({ model: 'gemini-3.1-pro-preview', contents: prompt });
+>>>>>>> fe491e44639188f074fba6477f2f8cebb5a8a72d
       setSuggestion(response.text ?? 'Could not generate a suggestion.');
     } catch (error) {
       console.error('Error suggesting next lab:', error);
