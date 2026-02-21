@@ -1,0 +1,9 @@
+{
+  "/page": "app/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/weekly/page": "app/weekly/page.js",
+  "/about/page": "app/about/page.js",
+  "/labs/page": "app/labs/page.js",
+  "/dashboard/[day]/page": "app/dashboard/[day]/page.js",
+  "/revision/page": "app/revision/page.js"
+}
